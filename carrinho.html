@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoro Moda Masculina</title>
+    <!-- scroll reveal cdn  -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- box icon cdn  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- custom css file -->
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/logoZoro.jpg" type="image/x-icon">
+</head>
+<body>
+    <!-- ================= header section ================ -->
+    <header class="section flex">
+        <!-- header left section  -->
+        <div class="header-left">
+            <!-- header logo  -->
+            <div class="header-logo">
+                <h1>Zoro</h1>
+            </div>
+        </div>
+        <div class="header-right flex">
+            <!-- header search box  -->
+            <div class="search-box flex">
+                <i class='bx bx-search search-icon'></i>
+                <input type="text" class="input-search" placeholder="O que você busca?">
+            </div>
+            <!-- header icons  -->
+            <div class="header-icons flex">
+                <a href="carrinho.html">
+                <i class='bx bx-cart-alt'></i></a>
+                <a href="tela-de-login.html">
+                <i class="bx bx-user"></i></a>
+            </div>
+            <!-- header menu -->
+            <div class="header-menu">
+                <i class='bx bx-menu-alt-right menu-icon' ></i>
+                <!-- menu  -->
+                <ul class="menu flex">
+                    <li class="nav-item">
+                        <i class='bx bxs-home' ></i>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <i class='bx bxs-shopping-bag' ></i>                      
+                        <a href="produtos.html">Produtos</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- mode change icon  -->
+            <div class="mode-change">
+                <i class='bx bx-moon mode-change-icon' ></i>
+            </div>
+        </div>
+    </header> 
+    <br><br>
+    <section class="cart-section">
+        <h1>Carrinho de Compras</h1>
+
+    </section>
+    <br><br>
+    <section class="cart-section">
+        <div id="cart"></div>
+
+    </section>
+    
+
+    <script>
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+
+        function updateCart() {
+            var cartDiv = document.getElementById('cart');
+            cartDiv.innerHTML = '';
+            cart.forEach(function(product, index) {
+                var cartItemDiv = document.createElement('div');
+                cartItemDiv.className = 'cart-item';
+                var productNameDiv = document.createElement('div');
+                productNameDiv.textContent = product.productName + ' - R$' + product.price;
+                var removeButton = document.createElement('button');
+                removeButton.textContent = 'Remover';
+                removeButton.onclick = function() {
+                    removeFromCart(index);
+                };
+                cartItemDiv.appendChild(productNameDiv);
+                cartItemDiv.appendChild(removeButton);
+                cartDiv.appendChild(cartItemDiv);
+            });
+        }
+
+    updateCart();
+    </script>
+
+    <!-- custom js file  -->
+    <script src="js/index.js"></script>
+</body>
+</html>
