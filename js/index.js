@@ -44,3 +44,12 @@ modeChangeIcon.addEventListener('click' , () => {
         document.body.classList.toggle('dark-theme');
     }
 })
+
+function addToCart(productName, price) {
+    cart.push({productName: productName, price: price});
+    localStorage.setItem('cart', JSON.stringify(cart));
+    alert(productName + ' adicionado ao carrinho!');
+}
+function pagamento(productName, price) {
+    alert('Pagamento Realizado com sucesso! Volte Sempre!');
+}

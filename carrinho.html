@@ -70,6 +70,18 @@
 
     </section>
     
+    <section class="section flex cart-elment">
+        <div>
+            <a href="produtos.html"><button class="enviar1">Continuar Comprando</button></a>
+        </div>
+        <div>
+            <button class="enviar1" onclick="cartClear()">Limpar Carrinho</button>
+        </div>
+        <div>
+            <button class="enviar1" onclick="alertPag()">Efetuar Pagamento</button>
+        </div>
+                
+    </section>
 
     <script>
         var cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -99,7 +111,22 @@
             });
         }
 
+        // Limpa o Carrinho
+        function cartClear() {
+            cart=""
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+
     updateCart();
+    </script>
+
+    <script>
+        function alertPag() {
+            alert('Pagamento Realizado com sucesso! Volte Sempre!');
+        }
+        
+
     </script>
 
     <!-- custom js file  -->

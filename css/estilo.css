@@ -468,6 +468,18 @@ button:hover{
     margin-top: 10px;
     cursor:pointer;
 }
+.cart-element{
+    background-color: rgb(43, 44, 44); 
+    color: #f2f2f7;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
 /* ============= mobile header section ============ */
 @media (max-width:768px) {
     /* header section  */
