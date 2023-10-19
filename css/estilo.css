@@ -371,7 +371,7 @@ button:hover{
     padding-bottom: 10px;
 }
 .cart-item button{
-    background-color: var(--clr-blue);
+    background-color: var(--clr-light-black);
     border: none;
     color: white;
     padding: 10px 20px;
