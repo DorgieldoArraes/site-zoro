@@ -1,7 +1,8 @@
 /* global font family*/
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
 /* Esta regra de importação traz a fonte "Poppins" da Google Fonts com diferentes variações de peso (400, 500, 700 e 900) e a torna disponível para uso na página.*/
- 
+@import url('https://fonts.googleapis.com/css2?family=Damion&family=Montserrat:wght@100;300;400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400;1,700&family=Roboto:wght@100;300;500;700&display=swap');
+
 :root{ /*Define variáveis CSS globais, que podem ser usadas em todo o código CSS para definir cores, tamanhos de fonte, fontes, etc. Isso facilita a manutenção e a personalização do design.*/
      
     /* colors  */
@@ -9,6 +10,7 @@
     --clr-black : #181407 ;
     --clr-light-blue : #588af5;
     --clr-blue : #046bcc;
+    --footer-background: #046bcc;
     --clr-white: #FFF;
     --theme-color: #3c3a3a;
     --theme-bg-color: rgb(255 255 255 / 31%);
@@ -32,11 +34,11 @@
     --fw-large : 700;
     --fw-medium : 500;
     --fw-regular : 400;
-    --fw-small : 100;
 } 
 .dark-theme{
     /* colors  */
     --theme-color: #f9fafb;
+    --footer-background: #191407;
     --theme-bg-color: rgba(16 18 27 / 80%);
     --border-color: rgba(113 119 144 / 25%); 
     --card-color: rgba(113 119 144 / 25%); 
@@ -176,7 +178,7 @@ header{
 .logoZoro{
     border-image-width: 1px;
     height: auto;
-    max-width: 25%;
+    max-width: 30%;
     margin: 0;
     margin-right: 0;
     padding: 0;
@@ -300,7 +302,7 @@ header{
 }
 .product{ 
     overflow: hidden; /*Corta o conteúdo que ultrapassa o tamanho da div*/
-	color: black;
+	color: var(--text-color);
 	text-align: center;
 	width: 240px;
 	height: 400px;
@@ -326,7 +328,7 @@ header{
 }
 .product h4{
     margin: 10px 0;
-    color: #000; /* Texto preto */
+    color: var var(--text-color); /* Texto preto */
 }
 .product p{
     font-weight: bold;
@@ -484,6 +486,85 @@ button:hover{
 
 }
 
+footer{
+    background-color: var(--footer-background); 
+    transition: all .5s ease-in-out;
+    padding: 30px 0; /* Reduzi o preenchimento para torná-lo mais curto */
+    color: white; /* Defini a cor do texto como branco para maior contraste */ 
+}
+.container-foot{
+    max-width: 1400px;
+    padding: 0 4%;
+    margin: auto;
+}
+.row-footer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px; 
+}
+.footer-col h4{
+    font-size: 18px; /* Reduzi o tamanho da fonte dos títulos */
+    margin-bottom: 10px; /* Reduzi a margem inferior dos títulos */
+    color: white;
+    font-weight: 500;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer-col ul{
+    list-style: none;
+}
+
+.footer-col ul li{
+    margin: 10px 0; 
+}
+
+.footer-col ul li a{
+    font-size: 14px;
+    text-transform: capitalize;
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #cecdcd;
+    padding-left: 10px;
+}
+.medias-sociais{
+    margin: auto; 
+    padding-top: 10px;
+    display: flex;
+    text-align: center;
+}
+.medias-sociais a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    border-radius: 50%;
+    color: white;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+}
+.medias-sociais a i{
+    font-size: 20px;
+}
+.medias-sociais a:hover{
+    color: var(--footer-background);
+    background-color: white;
+}
+.copyright{ 
+    text-align: center; /* Centralizei o texto no centro das colunas */
+    padding-top: 10px;
+}
 /* ============= mobile header section ============ */
 @media (max-width:768px) {
     /* header section  */
@@ -500,5 +581,17 @@ button:hover{
     }
     .product img{
         width: 60%;
+    }
+} 
+/* ============= footer responsivo ============ */
+@media (max-width: 800px) {
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media (max-width:600px) {
+    .footer-col{
+        width: 100%;
     }
 }
